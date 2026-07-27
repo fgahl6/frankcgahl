@@ -66,18 +66,11 @@
       font-size: clamp(1.08rem, 2.2vw, 1.45rem);
     }
 
-    .hero-card, .branch-card, .portfolio-note {
-      margin: 34px 0 0;
-      padding: 28px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: linear-gradient(135deg, rgba(15,28,21,.92), rgba(22,40,30,.86));
-      box-shadow: var(--shadow);
-    }
-
-    .branch-card, .portfolio-note {
-      margin-top: 20px;
-      background: rgba(255,255,255,.045);
+    .intro {
+      max-width: 980px;
+      margin: 22px 0 0;
+      color: var(--text);
+      font-size: 1.05rem;
     }
 
     blockquote {
@@ -107,8 +100,11 @@
       font-weight: 700;
     }
 
-    main { padding: 44px 0 70px; }
-    section { margin-top: 42px; }
+    main { padding: 30px 0 70px; }
+    section { margin-top: 38px; }
+    .portfolio-section { margin-top: 0; }
+    .about-section { margin-top: 48px; }
+    .navigation-section { margin-top: 38px; }
 
     h2 {
       margin: 0 0 18px;
@@ -119,22 +115,6 @@
     .note { color: var(--muted); max-width: 930px; }
     code { color: #fff7d7; }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    .card {
-      padding: 22px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(22,40,30,.88), rgba(15,28,21,.88));
-    }
-
-    .card h3 { margin: 0 0 10px; color: #fff; }
-    .card p { margin: 0; color: var(--muted); }
 
     .table-shell {
       overflow-x: auto;
@@ -192,7 +172,7 @@
 
     @media (max-width: 700px) {
       header { padding-top: 44px; }
-      .hero-card, .branch-card, .portfolio-note { padding: 21px; }
+      .intro { font-size: 1rem; }
       blockquote { font-size: 1.05rem; padding: 18px; }
       .wrap { width: min(100% - 24px, 1160px); }
       table { min-width: 920px; }
@@ -204,129 +184,29 @@
   <header>
     <div class="wrap">
       <div class="eyebrow">Frank C. Gahl</div>
-      <h1>Research</h1>
+      <h1>Research Portfolio</h1>
 
       <p class="subtitle">
-        Research portfolio and publications on continuity, memory, accountability, verification,
-        historical intelligibility, and AI-mediated knowledge systems.
+        Published papers, manuscripts under review, and archived research on continuity, memory,
+        accountability, verification, historical intelligibility, and AI-mediated knowledge systems.
       </p>
 
-      <div class="hero-card">
-        <p>
-          This website serves as the research portfolio for Frank C. Gahl and as one scholarly branch of the broader TOLARENAI project. It collects published papers,
-          manuscripts under review, active research projects, editorial returns that contributed to later work, and
-          archived research summaries documenting the development of an ongoing interdisciplinary research program.
-        </p>
-
-        <p>
-          Although each paper addresses a distinct problem, the work shares a common objective: understanding how societies
-          can preserve meaning, attribution, evaluability, and historical continuity as knowledge increasingly moves through
-          computational infrastructures.
-        </p>
-
-        <blockquote>
-          How can societies preserve meaningful continuity as knowledge becomes increasingly mediated by computational systems?
-        </blockquote>
-
-        <div class="button-row">
-          <a class="button" href="#portfolio-index">View Portfolio Index</a>
-          <a class="button" href="../index.html">Frank C. Gahl Home</a>
-          <a class="button" href="https://tolarenai.com/">TOLARENAI</a>
-        </div>
-      </div>
+      <p class="intro">
+        This portfolio presents the scholarly work of Frank C. Gahl and forms the research branch of the broader
+        TOLARENAI project. Its central concern is how societies can preserve meaning, attribution, evaluability,
+        and historical continuity as knowledge increasingly moves through computational systems.
+      </p>
     </div>
   </header>
 
   <main class="wrap">
-    <section>
-      <h2>About This Branch</h2>
-
-      <p>
-        This site is one branch of a distributed web of research, archives, essays, and continuity infrastructure created
-        by Frank C. Gahl. The research branch focuses on formal scholarly work: journal articles, manuscripts, research
-        summaries, and the conceptual development of an independent research program.
-      </p>
-
-      <p>
-        The larger TOLARENAI project explores AI-mediated society, continuity, public memory, attribution, and future
-        human-AI collaboration. This branch keeps the scholarly record focused and lightweight while remaining clearly
-        connected to the broader project.
-      </p>
-
-      <div class="branch-card">
-        <strong>Relationship to TOLARENAI:</strong>
-        The research presented here forms the scholarly branch of the broader TOLARENAI ecosystem. Other branches may
-        include Tolarport, AI economy materials, scrolls, quotation archives, public essays, and future continuity projects.
-      </div>
-    </section>
-
-    <section>
-      <h2>Research Program</h2>
-
-      <p>
-        This portfolio presents an evolving body of independent research by Frank C. Gahl on continuity, memory,
-        accountability, verification, historical intelligibility, and AI-mediated knowledge systems. The work examines
-        how societies preserve meaning, attribution, and evaluability as knowledge increasingly moves through computational
-        infrastructures.
-      </p>
-
-      <p>
-        Across this portfolio, several questions recur. How can attribution survive at AI scale? What makes knowledge
-        systems externally evaluable? How does synthetic mediation affect historical intelligibility? What forms of
-        witnessing, provenance, and preservation are needed when memory itself becomes computationally mediated?
-      </p>
-
-      <p>
-        The research moves across philosophy of history, social epistemology, AI ethics, media studies, finance,
-        institutional analysis, and historical theory. Its central concern is continuity: the conditions that allow
-        societies to remember, verify, revisit, and learn from what came before.
-      </p>
-
-      <blockquote>The future needs a memory.</blockquote>
-    </section>
-
-    <section>
-      <h2>Major Research Areas</h2>
-
-      <div class="cards">
-        <article class="card">
-          <h3>Continuity and Memory</h3>
-          <p>Research on how societies preserve traces, context, provenance, and interpretive pathways across time.</p>
-        </article>
-
-        <article class="card">
-          <h3>Attribution and Accountability</h3>
-          <p>Work examining how responsibility, source relationships, and institutional accountability can remain intelligible inside AI-scale systems.</p>
-        </article>
-
-        <article class="card">
-          <h3>Verification and Evaluability</h3>
-          <p>Papers exploring how claims, systems, institutions, and outputs remain capable of being assessed, challenged, reproduced, or independently evaluated.</p>
-        </article>
-
-        <article class="card">
-          <h3>Historical Intelligibility</h3>
-          <p>Research on how computational mediation changes the conditions under which societies reconstruct, interpret, and learn from the past.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="portfolio-index">
+    <section id="portfolio-index" class="portfolio-section">
       <h2>Portfolio Index</h2>
 
       <p class="note">
-        The table below lists the research sequence from the most recent project back to the first published paper.
-        It is intended as a practical index for readers, reviewers, editors, and search engines. All article links below use same-folder paths inside <code>research_portfolio/</code>.
+        The research sequence is listed from the most recent project back to the first published paper.
+        Earlier developmental submissions are retained as summaries where useful to document the evolution of the research program.
       </p>
-
-      <div class="portfolio-note">
-        <strong>Portfolio Note:</strong>
-        This portfolio includes published papers, manuscripts under review, active research projects, editorial returns
-        that contributed to later work, and research summaries retained to document the conceptual development of the
-        overall research program. For several earlier projects, the complete working manuscripts are not reproduced here;
-        instead, brief research summaries have been preserved to show the evolution of the ideas.
-      </div>
-
       <div class="table-shell">
         <table>
           <thead>
@@ -513,14 +393,24 @@
           </tbody>
         </table>
       </div>
+
     </section>
 
-    <section>
-      <h2>Branch Navigation</h2>
+    <section class="about-section">
+      <h2>About the Research</h2>
+
       <p>
-        This research branch is designed to remain connected to the broader TOLARENAI ecosystem while keeping the scholarly
-        record organized as a focused, searchable, and lightweight site.
+        Across this portfolio, recurring questions include how attribution can survive at AI scale, what makes
+        knowledge systems externally evaluable, how synthetic mediation affects historical intelligibility,
+        and what forms of witnessing, provenance, verification, and preservation are needed when memory itself
+        becomes computationally mediated.
       </p>
+
+      <blockquote>The future needs a memory.</blockquote>
+    </section>
+
+    <section class="navigation-section">
+      <h2>Related Links</h2>
 
       <div class="button-row">
         <a class="button" href="../index.html">Frank C. Gahl Home</a>
