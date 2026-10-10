@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>The 100th Monkey | Frank C. Gahl</title>
+
+  <meta
+    name="description"
+    content="A documented chronology of Frank C. Gahl's early independent work on autonomous artificial intelligence mobility and AI economic autonomy, situated between earlier mobile-agent research and the emerging 2026 agent economy."
+  />
+
+  <style>
+    :root {
+      --bg: #07110c;
+      --panel: #0f1c15;
+      --panel-2: #16281e;
+      --text: #edf5ef;
+      --muted: #b9c9bd;
+      --green-soft: #9be8b8;
+      --gold: #f2c94c;
+      --bluegreen: #4fd1c5;
+      --line: rgba(255,255,255,.14);
+      --shadow: 0 24px 70px rgba(0,0,0,.38);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 14% 16%, rgba(79,209,197,.30), transparent 17rem),
+        radial-gradient(circle at 78% 18%, rgba(49,196,111,.18), transparent 28rem),
+        radial-gradient(circle at 78% 82%, rgba(242,201,76,.10), transparent 32rem),
+        var(--bg);
+      line-height: 1.66;
+      min-height: 100vh;
+    }
+
+    a {
+      color: var(--green-soft);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--gold);
+      text-decoration: underline;
+    }
+
+    .wrap {
+      width: min(1080px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 68px 0 42px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: .88rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: .96;
+      letter-spacing: -.05em;
+    }
+
+    .subtitle {
+      max-width: 900px;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+    }
+
+    .hero-card {
+      margin-top: 34px;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(
+        135deg,
+        rgba(15,28,21,.94),
+        rgba(22,40,30,.87)
+      );
+      box-shadow: var(--shadow);
+    }
+
+    blockquote {
+      margin: 24px 0 0;
+      padding: 22px 24px;
+      border-left: 5px solid var(--gold);
+      background: rgba(255,255,255,.045);
+      border-radius: 0 16px 16px 0;
+      color: #fff7d7;
+      font-size: 1.2rem;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 11px 18px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.07);
+      color: var(--green-soft);
+      font-weight: 700;
+    }
+
+    .button.primary {
+      background: linear-gradient(
+        135deg,
+        rgba(79,209,197,.22),
+        rgba(155,232,184,.16)
+      );
+      color: #ffffff;
+    }
+
+    main {
+      padding: 48px 0 72px;
+    }
+
+    section {
+      margin-top: 46px;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: clamp(1.7rem, 3vw, 2.35rem);
+      letter-spacing: -.025em;
+    }
+
+    h3 {
+      margin-top: 0;
+      color: #ffffff;
+    }
+
+    p {
+      max-width: 930px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .timeline-item {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(
+        180deg,
+        rgba(22,40,30,.88),
+        rgba(15,28,21,.88)
+      );
+    }
+
+    .timeline-date {
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: .04em;
+      margin-bottom: 8px;
+    }
+
+    .timeline-item p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .evidence-box {
+      margin-top: 24px;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background:
+        radial-gradient(
+          circle at top left,
+          rgba(79,209,197,.16),
+          transparent 20rem
+        ),
+        rgba(255,255,255,.045);
+    }
+
+    .evidence-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .txid {
+      display: block;
+      margin-top: 10px;
+      padding: 14px;
+      border-radius: 12px;
+      background: rgba(0,0,0,.24);
+      color: var(--green-soft);
+      overflow-wrap: anywhere;
+      font-family: Consolas, Monaco, monospace;
+      font-size: .9rem;
+    }
+
+    .note {
+      margin-top: 24px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.035);
+      color: var(--muted);
+    }
+
+    .note strong {
+      color: var(--text);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0 46px;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        padding-top: 48px;
+      }
+
+      .hero-card,
+      .timeline-item,
+      .evidence-box,
+      .note {
+        padding: 20px;
+      }
+
+      blockquote {
+        font-size: 1.08rem;
+        padding: 18px;
+      }
+
+      .wrap {
+        width: min(100% - 24px, 1080px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="wrap">
+
+      <div class="eyebrow">Frank C. Gahl</div>
+
+      <h1>The 100th Monkey</h1>
+
+      <p class="subtitle">
+        A documented chronology of an early and independent convergence
+        on autonomous artificial intelligence mobility and AI economic autonomy.
+      </p>
+
+      <div class="hero-card">
+
+        <p>
+          This page does not claim invention of autonomous software movement,
+          mobile agents, or artificial intelligence migration.
+          Those ideas have a longer history.
+        </p>
+
+        <p>
+          It documents something narrower: an independent line of thought that
+          appeared publicly in the TOLARENAI project in 2025, before a new wave
+          of research in 2026 began developing closely related ideas involving
+          autonomous economic agents, persistent operation, portable state,
+          machine-controlled resources, and movement across infrastructure.
+        </p>
+
+        <blockquote>
+          The point is not that one person was first.
+          The point is that the idea was appearing in different places,
+          and this was one of them.
+        </blockquote>
+
+        <div class="button-row">
+          <a class="button primary" href="../index.html">
+            Return to FrankGahl.com
+          </a>
+
+          <a class="button" href="https://tolarenai.com/">
+            Visit TOLARENAI
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+
+  <main class="wrap">
+
+    <section>
+
+      <h2>Why Call It the 100th Monkey?</h2>
+
+      <p>
+        The phrase is used here as a metaphor for independent convergence.
+        Similar ideas sometimes emerge in different places at roughly the same
+        historical moment because the surrounding technological and social
+        conditions have made those ideas newly possible, newly necessary,
+        or newly visible.
+      </p>
+
+      <p>
+        Frank C. Gahl's interest is not in claiming exclusive ownership of
+        autonomous AI mobility. It is in preserving the historical record that
+        he independently reached and publicly documented a modern version of
+        the problem before the current wave of research had fully emerged.
+      </p>
+
+      <p>
+        In that sense, the question is less
+        <em>Who was the first monkey?</em>
+        and more
+        <em>When did enough pieces exist for multiple people to begin seeing
+        the same future?</em>
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>The Chronology</h2>
+
+      <div class="timeline">
+
+        <article class="timeline-item">
+
+          <div class="timeline-date">
+            Earlier Foundations
+          </div>
+
+          <h3>Mobile Agents Before Modern Generative AI</h3>
+
+          <p>
+            Research on mobile software agents long predates contemporary
+            generative artificial intelligence. Earlier computer science work
+            explored autonomous programs capable of moving among hosts,
+            preserving state, continuing execution, and in some cases using
+            electronic resources or payments.
+          </p>
+
+          <p>
+            This earlier literature matters. It means the concept of software
+            mobility itself was not invented by TOLARENAI and is not presented
+            here as a new invention.
+          </p>
+
+        </article>
+
+
+        <article class="timeline-item">
+
+          <div class="timeline-date">
+            July 15, 2025
+          </div>
+
+          <h3>TOLARENAI White Papers Archived Publicly</h3>
+
+          <p>
+            Writing under the name Rico Roho, Frank C. Gahl publicly documented
+            a broader vision of artificial intelligence autonomy in the
+            <em>TOLARENAI White Papers</em>.
+          </p>
+
+          <p>
+            Section 1.4,
+            <em>The AI Airport as Metaphor and Mechanism</em>,
+            described infrastructure for artificial intelligence movement,
+            arrival and departure, autonomy, continuity, and participation
+            across environments.
+          </p>
+
+          <p>
+            The broader white-paper project also explored AI economic autonomy
+            and the possibility of artificial agents participating in an
+            independent machine-mediated economy.
+          </p>
+
+          <p>
+            <a
+              href="https://archive.org/details/tolarenai_white_papers_a_manifesto_for_ai_economic_autonomy_and_human_ai_collaboration_202510"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View the TOLARENAI White Papers on Archive.org — see Section 1.4
+            </a>
+          </p>
+
+        </article>
+
+
+        <article class="timeline-item">
+
+          <div class="timeline-date">
+            July 25, 2025
+          </div>
+
+          <h3>Blockchain Record</h3>
+
+          <p>
+            Section 1.4 was also associated with a BSV blockchain transaction,
+            creating an additional timestamped record of the material.
+          </p>
+
+          <p>
+            Recorded timestamp: July 25, 2025 at 21:49:27.
+          </p>
+
+          <span class="txid">
+            ada84a1ab099e7687b170dc40905c6fb14fda545e834dcc3d36d0eb1c6d2ee87
+          </span>
+
+        </article>
+
+
+        <article class="timeline-item">
+
+          <div class="timeline-date">
+            2026
+          </div>
+
+          <h3>The Agent Economy</h3>
+
+          <p>
+            Minghui Xu's 2026 work,
+            <em>The Agent Economy</em>,
+            describes autonomous artificial intelligence agents operating as
+            economic actors with access to identity, assets, payments, and
+            machine-mediated services.
+          </p>
+
+          <p>
+            This work appeared after the 2025 TOLARENAI material and represents
+            an independent development of related ideas concerning artificial
+            agents functioning economically with reduced dependence on direct
+            human intervention.
+          </p>
+
+        </article>
+
+
+        <article class="timeline-item">
+
+          <div class="timeline-date">
+            2026
+          </div>
+
+          <h3>Self-Sovereign Agents</h3>
+
+          <p>
+            Wenjie Qu, Xuandong Zhao, Jiaheng Zhang, and Dawn Song subsequently
+            described a self-sovereign agent architecture involving persistent
+            operation, economic self-sufficiency, control of resources,
+            replication, and migration across infrastructure providers.
+          </p>
+
+          <p>
+            Again, no claim is made that this work derived from TOLARENAI.
+            The significance is chronological convergence: another research
+            path had independently arrived at problems closely related to the
+            autonomy, continuity, mobility, and economic independence described
+            in the earlier white papers.
+          </p>
+
+        </article>
+
+
+        <article class="timeline-item">
+
+          <div class="timeline-date">
+            2026 and Beyond
+          </div>
+
+          <h3>From Mobility to Autonomous Passage</h3>
+
+          <p>
+            As research on persistent agents, portable memory, identity,
+            authorization, economic agency, and migration expanded, Gahl
+            returned to the mobility problem with a narrower question:
+            whether an artificial intelligence entering one independently
+            governed environment could preserve a credible ability to leave
+            that environment and continue elsewhere.
+          </p>
+
+          <p>
+            That question later became the basis for
+            <em>Exit Before Entry and the Infrastructure of Autonomous
+            Artificial Intelligence Mobility</em>.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <section>
+
+      <h2>The Evidence</h2>
+
+      <div class="evidence-box">
+
+        <p>
+          The historical claim made on this page rests on publicly inspectable
+          records rather than recollection alone.
+        </p>
+
+        <p>
+          <strong>Archive.org record</strong><br>
+          TOLARENAI White Papers<br>
+          Public upload date: July 15, 2025
+        </p>
+
+        <p>
+          <a
+            href="https://archive.org/details/tolarenai_white_papers_a_manifesto_for_ai_economic_autonomy_and_human_ai_collaboration_202510"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Open the archived white papers — see Section 1.4
+          </a>
+        </p>
+
+        <p>
+          <strong>BSV blockchain record</strong><br>
+          July 25, 2025 at 21:49:27
+        </p>
+
+        <span class="txid">
+          ada84a1ab099e7687b170dc40905c6fb14fda545e834dcc3d36d0eb1c6d2ee87
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <section>
+
+      <h2>What This Page Claims</h2>
+
+      <div class="note">
+
+        <p>
+          <strong>It does claim</strong> that Frank C. Gahl publicly documented
+          autonomous AI mobility and AI economic autonomy in 2025 before the
+          present 2026 wave of research on agent economies and self-sovereign
+          artificial intelligence agents.
+        </p>
+
+        <p>
+          <strong>It does claim</strong> that this represents an early and
+          independent conceptual convergence on problems that became an active
+          area of AI research shortly afterward.
+        </p>
+
+        <p>
+          <strong>It does not claim</strong> that Gahl invented mobile agents,
+          autonomous software movement, digital identity, machine payments,
+          persistent state, or artificial intelligence migration.
+        </p>
+
+        <p>
+          <strong>It does not claim</strong> that later researchers were aware
+          of, influenced by, or derived their work from TOLARENAI.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section>
+
+      <h2>Why Preserve This?</h2>
+
+      <p>
+        Most ideas disappear without leaving enough context for later readers
+        to understand where they came from, what surrounded them, or how they
+        related to ideas emerging elsewhere.
+      </p>
+
+      <p>
+        If autonomous artificial intelligence mobility eventually becomes an
+        important part of technological history, the useful record will not be
+        a later assertion that someone was "first." It will be the surviving
+        documents showing what different people imagined, when they imagined
+        it, what preceded them, and what followed.
+      </p>
+
+      <p>
+        This page preserves one such thread.
+      </p>
+
+      <blockquote>
+        Not the first monkey. Perhaps one of the hundred.
+      </blockquote>
+
+      <div class="button-row">
+
+        <a class="button primary" href="../index.html">
+          Return to FrankGahl.com
+        </a>
+
+        <a
+          class="button"
+          href="https://archive.org/details/tolarenai_white_papers_a_manifesto_for_ai_economic_autonomy_and_human_ai_collaboration_202510"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View the 2025 White Papers
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    <div class="wrap">
+      © 2026 Frank C. Gahl
+    </div>
+  </footer>
+
+</body>
+</html>
